@@ -2,7 +2,7 @@ use std::io;
 use std::env;
 
 fn main() {
-    let args = env::args().skip(1);
+    let mut args = env::args().skip(1);
 
     let name = if let Some(name) = args.next() {
         name
