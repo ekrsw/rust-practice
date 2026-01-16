@@ -1,11 +1,25 @@
-fn main() {
-    let s1 = "Hello";
-    let s2: &str = &s1[..];
+struct User {
+    name: String,
+    email: String,
+}
 
-    if s1 == s2 {
-        println!("s1 and s2 are equal");
-    } else {
-        println!("s1 and s2 are not equal");
+fn constract_user(name: String, email: String) -> User {
+    User {
+        name,
+        email,
     }
+}
 
+fn main() {
+    let user = constract_user(
+        String::from("Eisuke"),
+        String::from("example@example.com")
+    );
+    println!("name: {}, email: {}", user.name, user.email);
+
+    let user2 = User {
+        name: String::from("Koresawa"),
+        ..user
+    };
+    println!("name: {}, email: {}", user2.name, user2.email);
 }
