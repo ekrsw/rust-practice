@@ -1,25 +1,17 @@
 struct User {
     name: String,
+    age: u32,
     email: String,
 }
 
-fn constract_user(name: String, email: String) -> User {
+fn constract_user(name: String, age: u32, email: String) -> User {
     User {
         name,
+        age,
         email,
     }
 }
 
 fn main() {
-    let user = constract_user(
-        String::from("Eisuke"),
-        String::from("example@example.com")
-    );
-    println!("name: {}, email: {}", user.name, user.email);
-
-    let user2 = User {
-        name: String::from("Koresawa"),
-        ..user
-    };
-    println!("name: {}, email: {}", user2.name, user2.email);
+    let user = constract_user()
 }
