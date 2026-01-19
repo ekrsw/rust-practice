@@ -1,17 +1,9 @@
-struct User {
-    name: String,
-    age: u32,
-    email: String,
-}
-
-fn constract_user(name: String, age: u32, email: String) -> User {
-    User {
-        name,
-        age,
-        email,
-    }
-}
-
 fn main() {
-    let user = constract_user()
+    let width = 30;
+    let height = 50;
+    println!("The area of the rectangle is {} square pixels.", area(width, height));
+}
+
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
